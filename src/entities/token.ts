@@ -2,6 +2,7 @@ import invariant from 'tiny-invariant'
 import { ChainId } from '../constants'
 import { validateAndParseAddress } from '../utils'
 import { Currency } from './currency'
+import { decodeBech32Address } from "@alayanetwork/web3-utils";
 
 /**
  * Represents an ERC20 token with a unique address and some metadata.
@@ -37,7 +38,7 @@ export class Token extends Currency {
   public sortsBefore(other: Token): boolean {
     invariant(this.chainId === other.chainId, 'CHAIN_IDS')
     invariant(this.address !== other.address, 'ADDRESSES')
-    return this.address.toLowerCase() < other.address.toLowerCase()
+    return decodeBech32Address(this.address.toLowerCase()) < decodeBech32Address(other.address.toLowerCase())
   }
 }
 
@@ -57,6 +58,13 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
 }
 
 export const WETH = {
+  [ChainId.ALAYA]: new Token(
+    ChainId.ALAYA,
+    'atp1khdytqr63arj0gj7dhgygj2j8pzd8685fgl5zu',
+    18,
+    'WATP',
+    'Wrapped Atp'
+  ),
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,
     '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
