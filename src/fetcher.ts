@@ -1,8 +1,6 @@
-//modify by wcc 替换fks包
-// import { Contract } from '@ethersproject/contracts'
-import { Contract } from '@fksyuan/contracts'
+import { Contract } from '@alayanetwork/ethers-contracts'
 import { getNetwork } from '@ethersproject/networks'
-import { getDefaultProvider } from '@fksyuan/providers'
+import { getDefaultProvider } from '@alayanetwork/ethers-providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
 import IUniswapV2Pair from '@uniswap/v2-core/build/IUniswapV2Pair.json'

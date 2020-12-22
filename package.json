@@ -29,9 +29,9 @@
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0",
-    "@alayanetwork/contracts": "^5.0.1",
-    "@alayanetwork/providers": "^5.0.2",
-    "@alayanetwork/solidity": "^5.0.1",
+    "@alayanetwork/ethers-contracts": "^5.0.1",
+    "@alayanetwork/ethers-providers": "^5.0.2",
+    "@alayanetwork/ethers-solidity": "^5.0.1",
     "@alayanetwork/web3-utils": "^0.13.2"
   },
   "peerDependencies": {
